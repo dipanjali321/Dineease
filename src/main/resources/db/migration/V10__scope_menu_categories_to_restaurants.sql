@@ -5,5 +5,3 @@ ALTER TABLE menu_categories DROP CONSTRAINT menu_categories_name_key;
 ALTER TABLE menu_categories ADD CONSTRAINT fk_menu_categories_restaurant FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE RESTRICT;
 ALTER TABLE menu_categories ADD CONSTRAINT uq_menu_categories_restaurant_name UNIQUE (restaurant_id, name);
 CREATE INDEX idx_menu_categories_restaurant_id ON menu_categories (restaurant_id);
-INSERT INTO menu_categories (name, display_order, restaurant_id) VALUES ('Starters', 0, 2);
-UPDATE menu_items SET category_id = (SELECT id FROM menu_categories WHERE restaurant_id = 2 AND name = 'Starters') WHERE restaurant_id = 2;
