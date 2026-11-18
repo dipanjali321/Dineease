@@ -112,8 +112,13 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173", "http://localhost:5174")
-        );
+        List.of(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "https://dineease-blue.vercel.app",
+                "https://dineease-3qq6qd7cb-dipanjalibhujbal-2710s-projects.vercel.app"
+        )
+);
 
         configuration.setAllowedMethods(
                 List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
